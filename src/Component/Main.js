@@ -1,87 +1,155 @@
 import React, { useState } from "react";
 import Select from "react-select";
+
 var translationObj = [
   {
     value: "1",
-    label: "Pig latin convertor"
+    label: "Pig latin convertor",
+    conversion: "pig-latin"
   },
   {
     value: "2",
-    label: "Yoda Speak Translator"
+    label: "Yoda Speak Translator",
+    conversion: "yoda"
   },
   {
     value: "3",
-    label: "Pirate speak Translator"
+    label: "Pirate speak Translator",
+    conversion: "pirate"
   },
   {
     value: "4",
-    label: "Valley speak translator"
+    label: "Valley speak translator",
+    conversion: "yoda"
   },
   {
     value: "5",
-    label: "Minion speak translator"
+    label: "Minion speak translator",
+    conversion: "yoda"
   },
   {
     value: "6",
-    label: "Dothraki translator"
+    label: "Dothraki translator",
+    conversion: "yoda"
   },
   {
     value: "7",
-    label: "Valyrian translator"
+    label: "Valyrian translator",
+    conversion: "yoda"
   },
   {
     value: "8",
-    label: "Old English translator"
+    label: "Old English translator",
+    conversion: "yoda"
   },
   {
     value: "9",
-    label: "Shakesspeare translator"
+    label: "Shakesspeare translator",
+    conversion: "yoda"
   },
   {
     value: "10",
-    label: "Groot translator"
+    label: "Groot translator",
+    conversion: "yoda"
   },
   {
     value: "11",
-    label: "Groot translator"
+    label: "Groot translator",
+    conversion: "yoda"
   },
   {
     value: "12",
-    label: "Morse Code translator"
+    label: "Morse Code translator",
+    conversion: "yoda"
   },
   {
     value: "13",
-    label: "Brooklyn translator"
+    label: "Brooklyn translator",
+    conversion: "yoda"
   }
 ];
 
 const Main = () => {
-  const [selected, setSelected] = useState(translationObj[0]);
+  const [selected, setSelected] = useState(translationObj[0]); //fpr dropdown
+  const [userInput, setUserInput] = useState(""); // for handling the input by user
+  const [finalurl, setFinalUrl] = useState(""); // for url
 
   const handleChange = (e) => {
+    // see change dropdown
     setSelected(e);
   };
+  const userInputHandler = (e) => {
+    // see change input box
+    setUserInput(e.target.value);
+    console.log(userInput);
+  };
+
+  const errorHandle = (err) => {
+    // error handle during translations
+    console.log(err);
+  };
   const translate = () => {
+    // for creating url for translations
+    const createUrl = () => {
+      return `https://api.funtranslations.com/translate/${selected.conversion}.json?text=${userInput}`;
+    };
     switch (selected.value) {
       case "1":
-        return console.log("Pig");
+        setFinalUrl(createUrl());
         break;
       case "2":
-        console.log("yoda");
+        setFinalUrl(createUrl());
         break;
-
       case "3":
-        console.log("Pirate");
+        setFinalUrl(createUrl());
         break;
       case "4":
-        console.log("Valley");
+        setFinalUrl(createUrl());
+        break;
+      case "5":
+        setFinalUrl(createUrl());
+        break;
+      case "6":
+        setFinalUrl(createUrl());
+        break;
+      case "7":
+        setFinalUrl(createUrl());
+        break;
+      case "8":
+        setFinalUrl(createUrl());
+        break;
+      case "9":
+        setFinalUrl(createUrl());
+        break;
+      case "10":
+        setFinalUrl(createUrl());
+        break;
+      case "11":
+        setFinalUrl(createUrl());
+        break;
+      case "12":
+        setFinalUrl(createUrl());
+        break;
+      case "13":
+        setFinalUrl(createUrl());
         break;
 
       default:
         console.log("Default translation");
         break;
     }
+
+    fetch(finalurl)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.contents.translated);
+        outputDiv.innerHTML = data.contents.translated;
+      })
+      .catch(errorHandle);
   };
+
+  var outputDiv = document.querySelector(".output");
+
   return (
     <div>
       <h1>All in One Fun-Translator</h1>
@@ -108,7 +176,10 @@ const Main = () => {
           Translate
         </button>
         <div>
-          <textarea></textarea>
+          <textarea
+            className="text-area"
+            onChange={userInputHandler}
+          ></textarea>
         </div>
         <h3>Translation</h3>
         <div className="output"></div>;
