@@ -81,7 +81,7 @@ const Main = () => {
   const userInputHandler = (e) => {
     // see change input box
     setUserInput(e.target.value);
-    console.log(userInput);
+    // console.log(userInput);
   };
 
   const errorHandle = (err) => {
@@ -142,7 +142,7 @@ const Main = () => {
     fetch(finalurl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.contents.translated);
+        // console.log(data.contents.translated);
         outputDiv.innerHTML = data.contents.translated;
       })
       .catch(errorHandle);
