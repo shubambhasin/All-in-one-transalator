@@ -4,7 +4,7 @@ import Select from "react-select";
 var translationObj = [
   {
     value: "1",
-    label: "Pig latin convertor",
+    label: "Pig latin Translation",
     conversion: "pig-latin"
   },
   {
@@ -152,7 +152,7 @@ const Main = () => {
   var text_area = document.querySelector(".text-area");
   const clear = () => {
     outputDiv.innerHTML = "";
-    text_area.value = "";
+    text_area.value = " ";
   };
   return (
     <div>
@@ -175,7 +175,7 @@ const Main = () => {
       />
 
       <p>
-        {selected.value}. {selected.label}
+        <strong>Now Selected:</strong> {selected.label}
       </p>
 
       <div>
@@ -187,6 +187,7 @@ const Main = () => {
         </button>
         <div>
           <textarea
+            placeholder="Enter text here"
             className="text-area"
             onChange={userInputHandler}
           ></textarea>
@@ -197,7 +198,9 @@ const Main = () => {
             👇
           </span>
         </p>
-        <div className="output">Output here</div>;
+        <div className="output">
+          <small>Output here</small>
+        </div>
       </div>
     </div>
   );

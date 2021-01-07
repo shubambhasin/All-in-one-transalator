@@ -8,7 +8,13 @@ export default function App() {
       <div className="App">
         <Main />
       </div>
-      <footer className="center">Made by Shubam Bhasin </footer>
+      <footer className="center">
+        Made by{" "}
+        <a href="https://github.com/shubambhasin" className="link">
+          Shubam Bhasin
+        </a>{" "}
+      </footer>
+      <br />
     </div>
   );
 }
