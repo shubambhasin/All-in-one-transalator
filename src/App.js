@@ -4,8 +4,11 @@ import "./styles.css";
 
 export default function App() {
   return (
-    <div className="App">
-      <Main />
+    <div>
+      <div className="App">
+        <Main />
+      </div>
+      <footer className="center">Made by Shubam Bhasin </footer>
     </div>
   );
 }

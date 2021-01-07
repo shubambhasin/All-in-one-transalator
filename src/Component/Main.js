@@ -20,52 +20,52 @@ var translationObj = [
   {
     value: "4",
     label: "Valley speak translator",
-    conversion: "yoda"
+    conversion: "valspeak"
   },
   {
     value: "5",
     label: "Minion speak translator",
-    conversion: "yoda"
+    conversion: "minion"
   },
   {
     value: "6",
     label: "Dothraki translator",
-    conversion: "yoda"
+    conversion: "dothraki"
   },
   {
     value: "7",
     label: "Valyrian translator",
-    conversion: "yoda"
+    conversion: "valyrian"
   },
   {
     value: "8",
     label: "Old English translator",
-    conversion: "yoda"
+    conversion: "oldenglish"
   },
   {
     value: "9",
     label: "Shakesspeare translator",
-    conversion: "yoda"
+    conversion: "shakespeare"
   },
   {
     value: "10",
     label: "Groot translator",
-    conversion: "yoda"
+    conversion: "groot"
   },
   {
     value: "11",
-    label: "Groot translator",
-    conversion: "yoda"
+    label: "Boston Translator",
+    conversion: "boston"
   },
   {
     value: "12",
     label: "Morse Code translator",
-    conversion: "yoda"
+    conversion: "morse"
   },
   {
     value: "13",
     label: "Brooklyn translator",
-    conversion: "yoda"
+    conversion: "brooklyn"
   }
 ];
 
@@ -149,13 +149,20 @@ const Main = () => {
   };
 
   var outputDiv = document.querySelector(".output");
-
+  var text_area = document.querySelector(".text-area");
+  const clear = () => {
+    outputDiv.innerHTML = "";
+    text_area.value = "";
+  };
   return (
     <div>
-      <h1>All in One Fun-Translator</h1>
+      <h2>All in One Fun-Translator</h2>
       <small>
         *Uses API from{" "}
-        <a href="https://funtranslations.com">funtranslations.com</a>*
+        <a href="https://funtranslations.com" className="link">
+          funtranslations.com
+        </a>
+        *
       </small>
 
       <br />
@@ -175,14 +182,22 @@ const Main = () => {
         <button className="btn" onClick={translate}>
           Translate
         </button>
+        <button className="btn btn-clear" onClick={clear}>
+          Clear
+        </button>
         <div>
           <textarea
             className="text-area"
             onChange={userInputHandler}
           ></textarea>
         </div>
-        <h3>Translation</h3>
-        <div className="output"></div>;
+        <p>
+          Translation{" "}
+          <span role="img" aria-labelledby="finger-down">
+            👇
+          </span>
+        </p>
+        <div className="output">Output here</div>;
       </div>
     </div>
   );
