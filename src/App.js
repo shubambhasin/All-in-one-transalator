@@ -14,7 +14,6 @@ export default function App() {
           Shubam Bhasin
         </a>{" "}
       </footer>
-      <br />
     </div>
   );
 }

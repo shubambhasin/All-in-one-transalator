@@ -1,8 +1,6 @@
 body {
   background: rgba(247, 247, 247, 1);
   margin: 0;
-  display: flex;
-  justify-content: center;
   color: rgb(37, 37, 37);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -14,9 +12,7 @@ body {
     #ff92c3 51%,
     #bbbbbb 100%
   );
-
-  border-radius: 1rem;
-  margin-top: 20px;
+  border-radius: 0 0 1rem 1rem;
   margin-bottom: 20px;
   font-family: sans-serif;
   display: flex;
@@ -26,7 +22,6 @@ body {
   box-shadow: 0 0 10px #eee;
   background-size: 200% auto;
   /* background: rgba(0,0,0,0.2); */
-  width: 60vw;
   padding: 2rem;
   transition: 0.5s;
 }
@@ -48,7 +43,7 @@ body {
   margin: auto;
   margin-top: 2rem;
   text-align: center;
-  width: 80%;
+  width: 70%;
 }
 
 textarea {
@@ -109,4 +104,8 @@ textarea:hover {
   width: 6.5rem;
   background-position: right center; /* change the direction of the change here */
   color: #fff;
+}
+
+.main {
+  width: 60%;
 }

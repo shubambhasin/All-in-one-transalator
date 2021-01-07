@@ -155,7 +155,7 @@ const Main = () => {
     text_area.value = " ";
   };
   return (
-    <div>
+    <div className="main">
       <h2>All in One Fun-Translator</h2>
       <small>
         *Uses API from{" "}
