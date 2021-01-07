@@ -1,0 +1,54 @@
+body {
+  background: grey;
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.select-option {
+  padding: 0.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+  width: 60%;
+}
+
+textarea {
+  border-radius: 5px;
+  margin: 2rem;
+  margin-bottom: 0px;
+  padding: 1rem;
+  width: 60%;
+  height: 20%;
+}
+
+.output {
+  display: block;
+  margin: auto;
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 60%;
+  height: 10vh;
+}
+
+.btn {
+  align-items: flex-end;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 7rem;
+  height: 2.5rem;
+  outline: none;
+  transition: 0.3s;
+}
+.btn:hover {
+  cursor: pointer;
+  width: 7.5rem;
+  border: 0.5px solid red;
+}
