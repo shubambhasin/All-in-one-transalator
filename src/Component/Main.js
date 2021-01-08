@@ -209,6 +209,14 @@ const Main = () => {
         <strong>VPN</strong> after 5 try
       </small>
 
+      <div>
+        <textarea
+          placeholder="Enter text here"
+          className="text-area"
+          onChange={userInputHandler}
+        ></textarea>
+      </div>
+
       <Select
         placeholder="Select Translations"
         className="select-option"
@@ -229,13 +237,6 @@ const Main = () => {
           Clear
         </button>
 
-        <div>
-          <textarea
-            placeholder="Enter text here"
-            className="text-area"
-            onChange={userInputHandler}
-          ></textarea>
-        </div>
         <p>
           Translation{" "}
           <span role="img" aria-labelledby="finger-down">
