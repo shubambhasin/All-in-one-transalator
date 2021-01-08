@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
 var translationObj = [
@@ -66,6 +66,41 @@ var translationObj = [
     value: "13",
     label: "Brooklyn translator",
     conversion: "brooklyn"
+  },
+  {
+    value: "14",
+    label: "Emoji translator",
+    conversion: "emoji"
+  },
+  {
+    value: "15",
+    label: "British Accent Translator",
+    conversion: "british"
+  },
+  {
+    value: "16",
+    label: "Jive translator",
+    conversion: "jive"
+  },
+  {
+    value: "17",
+    label: "Starwar Gungan Translator",
+    conversion: "gungan"
+  },
+  {
+    value: "18",
+    label: "Chef translator",
+    conversion: "chef"
+  },
+  {
+    value: "19",
+    label: "Vulcan Translation",
+    conversion: "vulcan"
+  },
+  {
+    value: "20",
+    label: "Thuum translator",
+    conversion: "thuum"
   }
 ];
 
@@ -74,6 +109,9 @@ const Main = () => {
   const [userInput, setUserInput] = useState(""); // for handling the input by user
   const [finalurl, setFinalUrl] = useState(""); // for url
 
+  useEffect(() => {
+    console.clear();
+  }, []);
   const handleChange = (e) => {
     // see change dropdown
     setSelected(e);
@@ -133,9 +171,9 @@ const Main = () => {
       case "13":
         setFinalUrl(createUrl());
         break;
-
       default:
-        console.log("Default translation");
+        alert("Choose a transalation first");
+
         break;
     }
 
@@ -150,6 +188,7 @@ const Main = () => {
 
   var outputDiv = document.querySelector(".output");
   var text_area = document.querySelector(".text-area");
+  // var warning = document.querySelector(".warning");
   const clear = () => {
     outputDiv.innerHTML = "";
     text_area.value = " ";
@@ -164,8 +203,12 @@ const Main = () => {
         </a>
         *
       </small>
-
       <br />
+      <small>
+        <strong>!Note:</strong> 5 translations per hour only, otherwise use{" "}
+        <strong>VPN</strong> after 5 try
+      </small>
+
       <Select
         placeholder="Select Translations"
         className="select-option"
@@ -185,6 +228,7 @@ const Main = () => {
         <button className="btn btn-clear" onClick={clear}>
           Clear
         </button>
+
         <div>
           <textarea
             placeholder="Enter text here"

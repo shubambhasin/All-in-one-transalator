@@ -10,7 +10,7 @@ export default function App() {
       </div>
       <footer className="center">
         Made by{" "}
-        <a href="https://github.com/shubambhasin" className="link">
+        <a href="https://github.com/shubambhasin" className="link flex-item">
           Shubam Bhasin
         </a>{" "}
       </footer>
